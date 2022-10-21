@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 //task 1
 // Напиши скрипт для отображения часов и минут в консоли браузера в виде строки формата "14 ч. 26 мин.". Если значение переменной minutes равно 0, то выводи строку "14 ч.", без минут.
 
@@ -132,7 +132,7 @@ if (daysUntilDeadline === 0) {
 } else if (daysUntilDeadline === 0) {
   console.log("Сегодня");
 }
-=======
+
 const a = 5;
 const b = 2;
 
@@ -145,4 +145,4 @@ if (a === b) {
 }
 
 console.log(result);
->>>>>>> Stashed changes
+
