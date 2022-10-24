@@ -427,8 +427,79 @@
  * «Оформляем заказ на сумму [сумма] со скидкой [скидка]%»
  */
 
-// let totalSpent = 2000;
-// let payment = 500;
+// let totalSpent = 50;
+// let payment = 200;
 // let discount = 0;
 
-if 
+
+//   if (totalSpent >= 100 && totalSpent < 1000) {
+//   discount = 0.02;
+
+// } else if (totalSpent >= 1000 && totalSpent < 5000) {
+//   discount = 0.05;
+
+// } else if (totalSpent >= 5000) {
+//     discount = 0.1;
+    
+// } else {
+//     discount = 0;
+//     console.log('не партнёр, скидка 0%');
+// }
+
+// console.log(`Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`);
+
+// payment -= payment * discount;
+
+// console.log(`Ваш заказ со скидкой составляет ${payment}`);
+
+// totalSpent += payment;
+
+// console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
+
+//   let sum = 0
+
+// for (let i = 0; i <= 20; i += 1) {
+//   sum += i;
+// }
+// console.log(sum);
+
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (let i = 0; i < clients.length; i += 1) {
+//   console.log(clients[i]);
+// }
+
+// const string = "javascript";
+
+// for (const character of string) {
+//   console.log(character);
+// }
+
+
+// const message = "JavaScript is in my blood";
+// let totalPrice = 10;
+// let sum = 0;
+
+// let splitMassage = message.split(' ').length;
+
+
+// // debugger
+
+// for (let i = 1; i <= splitMassage; i++) {
+//   sum = i * totalPrice;
+// }
+// console.log(sum);
+
+// Сравнить длину array
+
+let maxLength = [1, 2, 3, 4, 5, 6, 7, 8]
+let a = [1, 2, 3, 4, 5];
+let b = [1, 2, 3];
+
+let newArray = a.concat(b);
+
+if (newArray.length > maxLength.length) {
+  // return newArray.slice(maxLength);
+}
+
+console.log(maxLength.slice());
