@@ -492,14 +492,69 @@
 
 // Сравнить длину array
 
-let maxLength = [1, 2, 3, 4, 5, 6, 7, 8]
-let a = [1, 2, 3, 4, 5];
-let b = [1, 2, 3];
+// let maxLength = [1, 2, 3, 4, 5, 6, 7, 8]
+// let a = [1, 2, 3, 4, 5];
+// let b = [1, 2, 3];
 
-let newArray = a.concat(b);
+// let newArray = a.concat(b);
 
-if (newArray.length > maxLength.length) {
-  // return newArray.slice(maxLength);
-}
+// if (newArray.length > maxLength.length) {
+//   // return newArray.slice(maxLength);
+// }
 
-console.log(maxLength.slice());
+// console.log(maxLength.slice());
+
+
+//самая длинная строка
+// const string = "The quick brown fox jumped over the lazy dog";
+// let newString = string.split(" ");
+// let longString = "";
+
+// for (const word of newString) {
+// if (word.length >  longString.length) {
+//   longString = word;
+// }
+// }
+
+// console.log(longString);
+
+//возвращала массив всех целых чисел от значения min до max
+
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//    for(let i = min;  i <= max; i++)
+//     numbers.push(i);
+//   return numbers;
+// }
+
+// function filterArray(numbers, value) {
+
+//  let newArrat = [];
+//  for (const number of numbers) {
+//    if (number > value) {
+//     newArrat.push(number)
+//    }
+//  }
+// console.log(newArrat);
+
+// }
+
+// const array1 = [1, 2, 3, 4, 6];
+// const array2 = [2, 4, 6];
+// let newArray = [];
+
+// for (const number of array1) {
+//      if (array2.includes(number)) {
+//       newArray.push(number)
+//      }
+   
+//    }
+//    console.log(newArray)
+
+
+
+console.log(3 % 1);
+console.log(5 % 4);
+console.log(5 % 3);
+console.log(12 % 1);
+console.log(8 % 1);
