@@ -552,9 +552,30 @@
 //    console.log(newArray)
 
 
+// const start = [1];
+// const end = [7];
 
-console.log(3 % 1);
-console.log(5 % 4);
-console.log(5 % 3);
-console.log(12 % 1);
-console.log(8 % 1);
+// // let newArray = start.concat(end);
+
+// let result = [];
+  
+// for (let i = start; i <= end; i++) {
+    
+//     if ((i % 2) === 0) {
+//         result.push(i);
+//     }
+//   }
+
+// console.log(result);
+
+// const array = ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'];
+// const value = ['Jupiter'];
+
+// for (const newArray of array) {
+//   if (newArray === value) {
+//     console.log(true);
+//   }
+//   console.log(false);
+// }
+
+
