@@ -126,7 +126,7 @@
 // console.log(langs)
 
 /**
- * Task 8
+ * Task 8 repeta
  * Знайти найменше значення в масиві.
  * 1. Створюємо змінну в яку запишему результат
  * 2. Присвоємо її перший елемент масива
@@ -216,7 +216,7 @@
 
 // const findLogin = function (allLogins, loginToFind) {
 //  return allLogins.includes(loginToFind)
-//  ? `Пользователь ${loginToFind} найден.` 
+//  ? `Пользователь ${loginToFind} найден.`
 //  : `Пользователь ${loginToFind} не найден.`;
 
 // }
@@ -301,10 +301,63 @@
 
 // task 15
 
-/*
+/* repeta
  * Напиши функцию filterNumbers(array [, number1, ...]) которая:
  * - первым аргументом принимает массив чисел
  * - после первого аргумента может быть произвольное количество других аргументов которые будут числами.
  * - Функция должна вернуть новый массив, в котором будут только те аргументы, начиная со второго,
  *   для которых есть аналог в оригинальном массиве.
  */
+
+// const filterNumbers = function (array, ...args) {
+//   console.log('array: ', array);
+//   console.log('args: ', args);
+
+//   const uniqueElements = [];
+
+//   for (const elements of array) {
+//     if (args.includes(elements)) {
+//       uniqueElements.push(elements);
+
+//       console.log(`${elements} есть везде!`);
+//     }
+//   }
+//   return uniqueElements;
+// }
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); // [2, 3]
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30, 15]
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); // [200]
+
+//Bardachov
+// task 16
+
+/**
+ * Task 1 - Індекс маси тіла.
+ * Напиши функцію `calcBMI(weight, height)` яка розраховує та повертає
+ * індекс маси тіла. Для цього необхідно розділити вагу в кілограмах на
+ * квадрат висоти людини в метрах.
+ * 
+ * Індекс маси тіла необхідно округлити до однієї цифри після коми
+ */
+
+// 1) Запитати ввести вагу і зріс - prompt
+// 2) створити пусту функцію розрахунку індексу маси - function
+// 3) задати функції параметри ваги і зросту - (weight, height)
+// 4) розрахувати індекс маси. - Math.pow()
+// 5) повернути результат - return
+// 6) округлити результат до одніє цифри після коми toFixed(1) 
+
+// const weight = prompt('Введіть вашу вагу в кг');
+// const height = prompt('Введіть ваш зріст в метрах');
+
+const calcBMI = function (weightU, heightU) { 
+const calcBMI = function (weightU, heightU) { 
+const square = Math.pow(, 2)
+}
+
+
+console.log(calcBMI(80, 1.75))
+console.log(calcBMI(70, 1.85))
+console.log(calcBMI(100, 1.55))
+console.log(calcBMI(90, 1.8))
