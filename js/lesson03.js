@@ -417,91 +417,193 @@
 //   3. Перевірити чи є курс у колекції - indexOf
 //   4. Якщо є, записуємо нове значення по індексу
 
-const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
 /** Щоб додати інтерактивности, запитуємо користувача ввести дані - prompt */
-const courseName = prompt('Введіть назву курсу');
-const newName = prompt('Введіть нове імʼя');
+// const courseName = prompt('Введіть назву курсу');
+// const newName = prompt('Введіть нове імʼя');
 
-const addCourse = function(newCourse) {
+// const checkCourseNam = function (value) {
+//   const index = courses.indexOf(value);
 
-  if (courses.includes(newCourse)) {
-    console.log('Такий курс вже є');
-    return // ранній вихід із функції
-  }
+//   if (index === -1) {
+//     console.log('такого курсу нема!')
+//     return false
+//   } else {
+//     console.log('такий курс вже є!')
+//     return true
+//   }
+// }
 
-  courses.push(newCourse);
-  return courses; // Памʼятайте, що змінна courses це посилання на масив!
-}
-
-// const result = addCourse(courseName);
-// console.log(result);
-
-const removeCourse = function (courseName) {
-  
-  const index = courses.indexOf(courseName);
-  
-  if (index === -1) {
-    console.log('такого курсу нема')
-    return
-  }
-  
-  const deletedCourses = courses.splice(index, 1);
-  return deletedCourses
-}
-
-// const result = removeCourse(courseName);
+// checkCourseNam(courseName);
 // console.log(courses);
-// console.log(result);
 
-const updateCourse = function (oldName, newName) {
-  const index = courses.indexOf(oldName);
-  
-  if (index === -1) {
-    console.log('такого курсу нема')
-    return
-  }
+// const addCourse = function (newCourse) {
 
-  courses[index] = newName
-}
+//    if (checkCourseNam(newCourse)) return
 
-// const result = updateCourse(courseName, newName);
-// console.log(courses);
-// console.log(result);
-
-
-/** checkCourseName - функція в яку ми винесли перевірку елемнту в масиві. */
-const checkCourseName = function (value) {
-  const index = courses.indexOf(value);
-
-  if (index === -1) {
-    console.log('такого курсу нема')
-    return false
-  } else {
-    console.log('Такий курс вже є');
-    return true
-  }
-}
-
-
-/** Дублюю ті самі функції, але тепер з викристанням винесеної перевірки в окрему функцію */
-// const addCourse = function(newCourse) {
-
-//   if (checkCourseName(newCourse)) return
-
-//   courses.push(newCourse);
+//   courses.push(newCourse)
 //   return courses;
 // }
 
+// addCourse(courseName);
+// console.log(courses);
+
 // const removeCourse = function (courseName) {
-  
-//   if (!checkCourseName(courseName)) return
-  
+//   const index = courses.indexOf(courseName);
+
+//   if (!checkCourseNam(courseName)) return;
+
 //   const deletedCourses = courses.splice(index, 1);
-//   return deletedCourses
-// }
+//}
+
+// removeCourse(courseName);
+// console.log(courses);
 
 // const updateCourse = function (oldName, newName) {
-//   if (!checkCourseName(oldName)) return
-//   courses[index] = newName
+//   const index = courses.indexOf(courseName);
+
+//    if (!checkCourseNam(oldName)) return;
+
+//   courses[index] = newName;
 // }
+
+// updateCourse(courseName, newName);
+// console.log(courses);
+
+// task 18
+
+// Example 2 - Меньшее из чисел
+// Напиши функцию min(a,b), которая возвращает меньшее из чисел a и b.
+
+// const min = function (a, b) {
+
+//   if (a > b) {
+//     return b;
+//   }
+
+//   return a;
+// }
+
+
+// console.log(min(2, 5)); // 2
+// console.log(min(3, -1)); // -1
+// console.log(min(1, 1)); // 1
+
+// task 19
+
+// Напиши функцию getRectArea(dimensions) для вычисления площади прямоугольника со сторонами, значения которых будут переданы в параметр dimensions в виде строки. Значения гарантированно разделены пробелом.
+
+// function getRectArea(dimensions) {
+//   const newArray = dimensions.split(" ");
+//   console.log(newArray);
+//   let square = newArray[0] * newArray[1];
+//   console.log(typeof square);
+//   return square;
+// }
+
+// console.log(getRectArea('8 11'));
+
+//task 20
+
+// Напиши функцию logItems(items), которая получает массив и использует цикл for, который для каждого элемента массива будет выводить в консоль сообщение в формате <номер элемента> - <значение элемента>. Нумерация элементов должна начинаться с 1.
+
+// Например для первого элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено 1 - Mango, а для индекса 2 выведет 3 - Ajax.
+
+// function logItems(items) {
+//   for (let i = 0; i < items.length; i += 1) {
+//     console.log(`${i + 1} ${items[i]}`);
+//   }
+// }
+
+// logItems(['Mango', 'Poly', 'Ajax']);
+// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+
+
+//task 21
+
+// Напиши функцию printContactsInfo(names, phones) которая выводит в консоль имя и телефонный номер пользователя. В параметры names и phones будут переданы строки имен и телефонных номеров, разделенные запятыми. Порядковый номер имен и телефонов в строках указывают на соответствие. Количество имен и телефонов гарантированно одинаковое.
+
+// function printContactsInfo(names, phones) {
+//   const namesArray = names.split(", ");
+// //  console.log(namesArray);
+
+// const phoneArrays = phones.split(",");
+// // console.log(phoneArrays);
+
+// for (let i = 0; i < namesArray.length; i += 1) {
+//   console.log(`${namesArray[i]} - ${phoneArrays[i]}`)
+// }
+// }
+
+// printContactsInfo(
+//   'Jacob, William, Solomon, Artemis',
+//   '89001234567,89001112233,890055566377,890055566300',
+// );
+
+// task 22
+
+// Напиши функцию findLargestNumber(numbers)которая ищет самое большое число в массиве.
+
+// function findLargestNumber(numbers) {
+//  let maxArray = numbers[0];
+
+// for (let number of numbers) {
+//   if (number > maxArray) {
+//    maxArray = number;
+//   }
+// }
+
+//   return maxArray;
+//  }
+
+// console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+// console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
+
+// task 23
+
+// Напишите функцию calAverage() которая принимает произвольное кол-во аргументов и возвращает их среднее значение. Все аругменты будут только числами.
+
+//1 перебрать масив
+//2 найти сумму масива
+//3 разделить на длину
+
+// function calAverage(...args) {
+//   console.log(args)
+//   let total = 0;
+  
+//   for (let arg of args) {
+//     total += arg / args.length;
+//   }
+//   return total
+// }
+
+// console.log(calAverage(1, 2, 3, 4)); // 2.5
+// console.log(calAverage(14, 8, 2)); // 8
+// console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
+// task 24
+
+// Напиши функцию formatTime(minutes) которая переведёт значение minutes (количество минут) в строку в формате часов и минут HH:MM.
+
+
+// const totalMinutes = 70;
+
+
+// function formatTime(totalMinutes) {
+//   const hours = Math.floor(totalMinutes / 60);
+//   const minutes = totalMinutes % 60;
+//   console.log(hours);
+//   console.log(minutes);
+  
+//   const doubleDigitHours = String(hours).padStart(2, 0);
+//   const doubleDigitMinutes = String(minutes).padStart(2, 0);
+//   console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
+// }
+
+// console.log(formatTime(70)); // "01:10"
+// console.log(formatTime(450)); // "07:30"
+// console.log(formatTime(1441)); // "24:01"
+
+
+
