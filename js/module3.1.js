@@ -382,23 +382,31 @@
 // debugger
 
 
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  
+//   removePotion(potionName) {
+//     let index = this.potions.indexOf(potionName);
+
+//     this.potions.splice(index, 1);
+//     console.log(this.potions.indexOf(potionName));
+//     return this.potions;
+              
+//   },
+// };
+
 const atTheOldToad = {
   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  
-  removePotion(potionName) {
+  updatePotionName(oldName, newName) {
+   
+    let index = this.potions.indexOf(oldName);
+    console.log(index)
+    this.potions.splice(index, 1, newName);
+    
+    return this.potions;
 
-    for (let i = 0; i < this.potions.length; i += 1) {
-      if (this.potions[i] === potionName) {
-        // return this.potions.splice(this.potionName, 1);
-      }
-    }
-   
-  // return this.potions.splice(this.potionName, 1);
-   
+
   },
 };
 
-// console.log()
-atTheOldToad.removePotion();
-
-
+console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
