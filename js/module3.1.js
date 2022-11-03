@@ -123,6 +123,7 @@
 
 // console.log(calculateTotalPrice("Scanner"));
 
+<<<<<<< Updated upstream
 /**
  * Task 1.
  * Напиши скрипт, який для об'єкта `user`, послідовно:
@@ -379,3 +380,20 @@ function findLongestWord(string) {
 let res = findLongestWord('Hello my name is longestone');
 
 debugger
+=======
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  
+  return { ...{ category, priority, completed }, ...data };
+  
+}
+
+// console.log(makeTask({}));
+// console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+// console.log(makeTask({category: "Finance", text: "Take interest"}));
+// console.log(makeTask({priority: "Low", text: "Choose shampoo" }));
+// console.log(makeTask({text: "Buy bread"}));
+>>>>>>> Stashed changes
