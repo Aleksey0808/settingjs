@@ -276,7 +276,7 @@
 
 //     if (amount > this.balance) {
 //       console.log('Нема грошей!');
-//       return 
+//       return
 //     }
 
 //     this.balance -= amount;
@@ -359,7 +359,7 @@
 
 
 
-// // Функція пошуку найдовшого слова в рядку. 
+// // Функція пошуку найдовшого слова в рядку.
 // function findLongestWord(string) {
   
 //   // 1. split розбиває рядок по пробілу на масив слів
@@ -412,6 +412,57 @@
 // console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
 
 //41/41
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//      for(let i = 0; i < this.potions.length; i += 1){
+//        if (this.potions[i].name === newPotion.name) {
+//       // console.log(`Error! Potion ${newPotion.name} is already in your inventory!`);
+//       return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//        }
+      
+//     }
+
+//       console.log(`${newPotion.name}`)
+//       this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     for(let i = 0; i < this.potions.length; i += 1){
+//   if(this.potions[i].name === potionName) {
+//     return this.potions.splice(i, 1);
+//   }
+// }
+//       return `Potion ${potionName} is not in inventory!`;
+//   },
+//   updatePotionName(oldName, newName) {
+//     const { potions} = this;
+//     for (let i = 0; i < potions.length; i += 1) {
+//       if (oldName === this.potions[i].name) {
+//         this.potions[i].name = newName;
+//         return `Potion ${oldName} is not in inventory!`;
+//       }
+//     }
+//     this.potions.splice(i, 1, newName);
+//     console.log('заміняє старий на новий ', this.potions);
+//   },
+// };
+
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
+// console.log(atTheOldToad.addPotion({ name: "Speed potion", price: 460 }));
+// console.log(atTheOldToad.removePotion("Dragon breath"));
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
+// console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"))
+
 
 /*
  * Работем с коллекцией товаров в корзине:
@@ -476,48 +527,53 @@ const cart = {
 
     return total;
   },
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    for (const item of this.items) {
+      if (item.name === productName) {
+        item.quantity += 1;
+        return;
+      }
+    }
+  },
+  decreaseQuantity(productName) {
+    for (const item of this.items) {
+      if (item.name === productName) {
+        item.quantity -= 1;
+        return;
+      }
+    }
+  },
 };
 
 console.log(cart.getItems());
 
 cart.add({ name: '🍎', price: 50 });
-cart.add({ name: '🍇', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍓', price: 110 });
-cart.add({ name: '🍓', price: 110 });
-cart.add({ name: '🍓', price: 110 });
+// cart.add({ name: '🍇', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍋', price: 60 });
+
+// cart.add({ name: '🍓', price: 110 });
+// cart.add({ name: '🍓', price: 110 });
+// cart.add({ name: '🍓', price: 110 });
 
 console.table(cart.getItems());
 
-console.log('Total: ', cart.countTotalPrice());
+// console.log('Total: ', cart.countTotalPrice());
 
-cart.remove('🍇');
-console.table(cart.getItems());
+// cart.remove('🍇');
+// console.table(cart.getItems());
 
 // cart.clear();
 // console.log(cart.getItems());
 
-console.log('Total: ', cart.countTotalPrice());
+// console.log('Total: ', cart.countTotalPrice());
 
-// cart.increaseQuantity('🍎');
+// cart.increaseQuantity('🍋');
+// cart.increaseQuantity('🍋');
 // console.table(cart.getItems());
 
 // cart.decreaseQuantity('🍋');
 // cart.decreaseQuantity('🍋');
 // console.table(cart.getItems());
-
-
-// updatePotionName(oldName, newName) {
-//   for (let i = 0; i < this.potions.length; i++) {
-//      if (newName === this.potions[i].name) {
-
-//       } else if (oldName === this.potions[i].name) {
-          
-//         this.potions[i].name = newName;
-//       }
-//   }
-// }
-
