@@ -156,6 +156,26 @@
 // processCall("Mango", takeCall, activateAnsweringMachine);
 // processCall("Poly", takeCall, leaveHoloMessage);
 
+// function makeCounter(h) {
+//   // let count = h;
+//   return function(n) {
+//     console.log(`${h}, ${n}`) ;
+//   };
+// }
+
+// let counter1 = makeCounter('petya'); 
+// let counter2 = makeCounter('ivan');
+
+// counter1('hi');
+// counter2('bye');
+// counter1('pshol');
+// counter2('privet');
+
+// console.log( counter1() );
+// console.log( counter2() );
+
+
+
 // function changeEven(numbers, value) {
 //   const newArray = [];
 //     numbers.forEach(element => {
@@ -311,6 +331,8 @@ const roundBonus = value => Math.floor(value);
 
 const roundedBonus = each(employees, roundBonus);
 console.log(roundedBonus)
+
+
 
 
 
