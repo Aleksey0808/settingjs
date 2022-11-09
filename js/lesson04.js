@@ -292,49 +292,136 @@
 // Example 3 - Коллбек функції
 // Напишіть функцію each(array, callback), яка першим параметром очікує масив, а другим - функцію, яка застосовується до кожного елемента масиву. Функція each повинна повернути новий масив, елементами якого будуть результати виклику коллбека.
 
-const employees = [
+// const employees = [
+//   {
+//     name: 'Artur',
+//     bonus: 64.5
+//   },
+//   {
+//     name: 'Ivan',
+//     bonus: 49.2
+//   },
+//   {
+//     name: 'Makar',
+//     bonus: 36
+//   },
+//   {
+//     name: 'Anastasiya',
+//     bonus: 25
+//   },
+//   {
+//     name: 'Olha',
+//     bonus: 165.13
+//   },
+// ]
+
+// const each = (array, callback) => {
+//   const resulArr = [];
+
+//   for ({name, bonus} of array) {
+//     resulArr.push({
+//       name,
+//       bonus: callback(bonus)
+//    })
+//   }
+// return resulArr
+// }
+
+// const roundBonus = value => Math.floor(value);
+
+// const roundedBonus = each(employees, roundBonus);
+// console.log(roundedBonus)
+
+
+const getUserEmails = users => {
+    
+   const userEmail = users.map(user => user.email);
+   return userEmail;
+    };
+ 
+const students = [
   {
-    name: 'Artur',
-    bonus: 64.5
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
   },
   {
-    name: 'Ivan',
-    bonus: 49.2
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
   },
   {
-    name: 'Makar',
-    bonus: 36
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
   },
   {
-    name: 'Anastasiya',
-    bonus: 25
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
   },
   {
-    name: 'Olha',
-    bonus: 165.13
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
   },
-]
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
 
-const each = (array, callback) => {
-  const resulArr = [];
-
-  for ({name, bonus} of array) {
-    resulArr.push({
-      name,
-      bonus: callback(bonus)
-   })
-  }
-return resulArr
-}
-
-const roundBonus = value => Math.floor(value);
-
-const roundedBonus = each(employees, roundBonus);
-console.log(roundedBonus)
 
 
 
-
-
+    console.log(getUserEmails(students))
 
 
