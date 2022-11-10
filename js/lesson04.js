@@ -520,7 +520,10 @@ const friends = [
 
 // const getTotalFriendCount = users => users.flatMap(user => user.friends).length;
 
-const getTotalFriendCount = users => users.reduce((total, user) => total + user.friends.length);
-console.log(getTotalFriendCount(friends))
+// const getTotalFriendCount = users => users.reduce((total, user) => total + user.friends.length);
+// console.log(getTotalFriendCount(friends))
 
 
+const sortByDescendingFriendCount = users => [...users].sort((firstFriend, lastFriend) => firstFriend.friends.length - lastFriend.friends.length);
+
+console.log(sortByDescendingFriendCount(friends))
