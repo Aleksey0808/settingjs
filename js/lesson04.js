@@ -333,13 +333,126 @@
 // console.log(roundedBonus)
 
 
-const getUserEmails = users => {
-    
-   const userEmail = users.map(user => user.email);
-   return userEmail;
-    };
+
+// const getFriends = (users) => {
+  // return users.flatMap(user => user.friends).filter((friend, index, array) => array.indexOf(friend) === index);
+  // return users.filter(user => user.isActive)
+// }
+
  
-const students = [
+// const students = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
+
+
+
+
+//     console.log(getFriends(students))
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// console.log(playtimes)
+
+// const totalPlayTime = playtimes.reduce((totalTime, player) => totalTime + player );
+// console.log(totalPlayTime)
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+
+// const totalAveragePlaytimePerGame = 
+// players.reduce((totalTime, {playtime, gamesPlayed}) => totalTime + playtime / gamesPlayed, 0);
+
+// console.log(totalAveragePlaytimePerGame)
+
+const friends = [
   {
     name: "Moore Hensley",
     email: "moorehensley@indexia.com",
@@ -347,9 +460,7 @@ const students = [
     friends: ["Sharron Pace"],
     isActive: false,
     balance: 2811,
-    skills: ["ipsum", "lorem"],
-    gender: "male",
-    age: 37,
+    gender: "male"
   },
   {
     name: "Sharlene Bush",
@@ -358,9 +469,7 @@ const students = [
     friends: ["Briana Decker", "Sharron Pace"],
     isActive: true,
     balance: 3821,
-    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
-    gender: "female",
-    age: 34,
+    gender: "female"
   },
   {
     name: "Ross Vazquez",
@@ -369,9 +478,7 @@ const students = [
     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
     isActive: false,
     balance: 3793,
-    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
-    gender: "male",
-    age: 24,
+    gender: "male"
   },
   {
     name: "Elma Head",
@@ -380,9 +487,7 @@ const students = [
     friends: ["Goldie Gentry", "Aisha Tran"],
     isActive: true,
     balance: 2278,
-    skills: ["adipisicing", "irure", "velit"],
-    gender: "female",
-    age: 21,
+    gender: "female"
   },
   {
     name: "Carey Barr",
@@ -391,9 +496,7 @@ const students = [
     friends: ["Jordan Sampson", "Eddie Strong"],
     isActive: true,
     balance: 3951,
-    skills: ["ex", "culpa", "nostrud"],
-    gender: "male",
-    age: 27,
+    gender: "male"
   },
   {
     name: "Blackburn Dotson",
@@ -402,9 +505,7 @@ const students = [
     friends: ["Jacklyn Lucas", "Linda Chapman"],
     isActive: false,
     balance: 1498,
-    skills: ["non", "amet", "ipsum"],
-    gender: "male",
-    age: 38,
+    gender: "male"
   },
   {
     name: "Sheree Anthony",
@@ -413,15 +514,13 @@ const students = [
     friends: ["Goldie Gentry", "Briana Decker"],
     isActive: true,
     balance: 2764,
-    skills: ["lorem", "veniam", "culpa"],
-    gender: "female",
-    age: 39,
-  },
+    gender: "female"
+  }
 ];
 
+// const getTotalFriendCount = users => users.flatMap(user => user.friends).length;
 
-
-
-    console.log(getUserEmails(students))
+const getTotalFriendCount = users => users.reduce((total, user) => total + user.friends.length);
+console.log(getTotalFriendCount(friends))
 
 
