@@ -844,15 +844,5 @@ const cars = [
   
 // console.table(getSortedCarsOnSale(cars));
 
-const car = {
-  brend: "skoda",
-  model: "octavia",
-  year: "2015",
-};
 
-const car2 = Object.create(car);
-car2.engine = "tdi";
-
-console.log(car2)
-console.log(car.isPrototypeOf('brend'));
 
