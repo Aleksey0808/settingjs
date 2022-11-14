@@ -843,3 +843,16 @@ const cars = [
 // const getSortedCarsOnSale = cars => [...cars].filter(car => car.onSale).sort((a, b) => a.price - b.price)
   
 // console.table(getSortedCarsOnSale(cars));
+
+const car = {
+  brend: "skoda",
+  model: "octavia",
+  year: "2015",
+};
+
+const car2 = Object.create(car);
+car2.engine = "tdi";
+
+console.log(car2)
+console.log(car.isPrototypeOf('brend'));
+
