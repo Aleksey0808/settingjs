@@ -163,7 +163,7 @@
 //   };
 // }
 
-// let counter1 = makeCounter('petya'); 
+// let counter1 = makeCounter('petya');
 // let counter2 = makeCounter('ivan');
 
 // counter1('hi');
@@ -447,7 +447,7 @@
 // ];
 
 
-// const totalAveragePlaytimePerGame = 
+// const totalAveragePlaytimePerGame =
 // players.reduce((totalTime, {playtime, gamesPlayed}) => totalTime + playtime / gamesPlayed, 0);
 
 // console.log(totalAveragePlaytimePerGame)
@@ -531,8 +531,8 @@
 // console.log(getTotalFriendCount(friends))
 
 
-// const sortByDescendingFriendCount = users => 
-// [...users].sort((firstFriend, lastFriend) => 
+// const sortByDescendingFriendCount = users =>
+// [...users].sort((firstFriend, lastFriend) =>
 // firstFriend.friends.length - lastFriend.friends.length).map(user => user.name)
 
 // console.table(sortByDescendingFriendCount(friends))
@@ -567,6 +567,8 @@
 
 // console.log(names)
 
+// Bardachov// lesson 7//////////////////////////////////////////////////////////
+
 //task 1
 
 /**
@@ -579,29 +581,265 @@
  * `logTotalPrice(product)` - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
  */
 
- const product = {
-  name: "chocolate",
-  price: 34,
-  quantity: 5
-}
+//  const product = {
+//   name: "chocolate",
+//   price: 34,
+//   quantity: 5
+// }
 
-const createProduct = (obj, callback) => {
+// const createProduct = (obj, callback) => {
 
- const product = {
-  ...obj,
-  index: 1,
- };
+//  const product = {
+//   ...obj,
+//   index: 1,
+//  };
 
- return callback(product);
+//  return callback(product);
 
-};
+// };
 
 // const logProduct = product => console.log(product);
 
-const logTotalPrice = product => product.reduce((total, {price, quantity}) => total += (price * quantity), 0);
+// const logTotalPrice = product =>  product.price * product.quantity;
 
-console.log(createProduct(product, logTotalPrice))
+// console.log(createProduct(product, logTotalPrice))
 // console.log(createProduct(product, logProduct))
 
 // const totalPrice = createProduct(product, calculateTotalPrice); // колбеком буде функція calculateTotalPrice
 // console.log(totalPrice)
+
+
+
+/**
+ * Task 2
+ * Додайте в об'єкт `account` методи `withdraw (amount, onSuccess, onError)` та 
+ * `deposit(amount, onSuccess, onError)`, де перший параметр це сума операції, а другий та третій - коллбеки.
+ * 
+ * Метод `withdraw` викликає onError якщо amount більше TRANSACTION_LIMIT або this.balance, і onSuccess в іншому випадку.
+ * Метод `deposit` викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
+ */
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: 'Jacob',
+//   balance: 40000,
+
+//   withdraw(amount, onSuccess, onError) {
+    
+//     if (amount > this.balance) {
+//       return onError(`${amount} Лимит перевышен!`);
+
+//     } else if (amount > TRANSACTION_LIMIT) {
+//       return onError(`${amount} недостаточно денег`);
+//     }
+
+//     onSuccess(amount);
+//   },
+
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT || amount <= 0) {
+//       return onError(amount);
+//     }
+
+//     onSuccess(amount);
+
+//   },
+
+// }
+
+// const handleSuccess = amount => console.log(`${amount} успішно опрацьовано!`);
+
+// const handonError = amount => console.log(`${amount} Не опрацьовано!`);
+
+// console.log(account.withdraw(2000, handleSuccess, handonError));
+// console.log(account.deposit(0, handleSuccess, handonError));
+
+/**
+ * Task 3
+ * Напишіть функцію `each(array, callback)`, яка першим параметром очікує 
+ * масив, а другим - функцію, яка застосовується до кожного елемента масиву. 
+ * Функція each повинна повернути новий масив з округленніми згначенями bonus, елементами якого будуть результати виклику коллбека.
+ */
+
+// коллекція співробітників, де кожен елемент це обʼєкт з іменем і сумою бонусів
+// const employees = [
+//   {
+//     name: 'Artur',
+//     bonus: 64.5
+//   },
+//   {
+//     name: 'Ivan',
+//     bonus: 49.2
+//   },
+//   {
+//     name: 'Makar',
+//     bonus: 36
+//   },
+//   {
+//     name: 'Anastasiya',
+//     bonus: 25
+//   },
+//   {
+//     name: 'Olha',
+//     bonus: 165.13
+//   },
+// ];
+
+// const each = (array, callback) => {
+//   const newArray = [];
+
+
+//     array.forEach((item, index) =>
+//       newArray.push({
+//       item: item.name,
+//       bonus: callback(item.bonus),
+//     }))
+    
+  
+//   return newArray;
+// }
+
+// const roundBonus = value => Math.floor(value);
+
+// const roundedBonuses = each(employees, roundBonus);
+// console.log(roundedBonuses);
+
+// Bardachov// lesson 8//////////////////////////////////////////////////////////
+
+const cars = [
+  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
+];
+
+//task 1
+// Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
+
+// const getModels = cars => cars.map(car => car.model);
+
+// console.table(getModels(cars));
+
+//task 2
+
+// Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним значенням властивості price залежно від переданої знижки.
+
+// const makeCarsWithDiscount = (cars, discount) => cars.map(car => ({
+//   ...car,
+//   price: car.price - (car.price * discount),
+// }))
+
+
+// console.table(makeCarsWithDiscount(cars, 0.2));
+// console.table(makeCarsWithDiscount(cars, 0.4));
+
+/**
+  * Task 3.
+  * Нехай функція `filterByPrice` повертає масив автомобілів ціна яких менша 
+  * ніж значення параметра `threshold`.
+*/
+
+// const filterByPrice = (cars, threshold) => cars.filter(car => car.price < threshold);
+
+// const filteredByPrice = filterByPrice(cars, 30000);
+// console.table(filteredByPrice);
+
+
+/**
+ * Task 4.
+ * Нехай функція `getCarsWithDiscount` повертає масив автомобілів властивість onSale яких true.
+*/
+
+// const getCarsWithDiscount = cars => cars.filter(car => car.onSale)
+
+// console.table(getCarsWithDiscount(cars))
+
+/** 
+ * Task 5
+ * Нехай функція `getCarsWithType` повертає масив автомобілів тип яких
+ * збігається зі значенням параметра `type`.
+*/
+
+// const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
+
+// console.table(getCarsWithType(cars, 'sedan'));
+
+/**
+ * Task 6.
+ * нехай ф-я getCarByModel повертає одне авто за моделю
+*/
+
+// const getCarByModel = (cars, model) => cars.find(car => car.model === model);
+
+// console.table(getCarByModel(cars, 'Fusion'));
+
+/**
+ * Task 7.
+ * Нехай функція `sortByAscendingAmount` повертає новий масив автомобілів відсортований за 
+ * зростанням значення якості `amount`.
+*/
+
+// const sortByAscendingAmount = cars => [...cars].sort((a, b) => b.amount - a.amount);
+
+// console.table(sortByAscendingAmount(cars));
+
+/**
+ * Task 9.
+ * Нехай функція `sortByModel` повертає новий масив автомобілів відсортований
+ * за назвою моделі в алфавітному порядку.
+*/
+
+// const sortByModel = (cars) => [...cars].sort((a, b) => a.make.localeCompare(b.make))
+
+
+// console.table(sortByModel(cars));
+// const cars2 = sortByModel(cars);
+
+/**
+ * Task 10.
+ * 
+ * Нехай функція `getTotalAmount` повертає загальну кількість автомобілів (значення
+ * властивостей `amount`).
+*/
+
+// const getTotalAmount = cars => cars.reduce((total, car) => total += car.amount, 0)
+  
+// console.log('Total',getTotalAmount(cars))
+
+/**
+ * Task 11.
+ * Нехай функція `getAvailableCarNames` повертає масив моделей автомобілів, але
+ * тільки тих, які зараз на розпродажі.
+*/
+
+/**
+ *  1. спочатку треба отпримати відфільтровний масив, де тільки ті машини котрі на розпродажу
+ *  2. Потім методом map, створити з фітфльтрованого масива автомобілів новий масив, де тільки назви моделей будуть
+ */
+
+// const getModelsOnSale = cars => [...cars].filter(car => car.onSale).map(carr => carr.model)
+  
+// console.table(getModelsOnSale(cars));
+
+/**
+ * Task 12.
+ * Нехай функція `getSortedCarsOnSale` повертає масив автомобілів на розпродажі
+ * (Властивість onSale), відсортованих за зростанням ціни.
+*/
+
+/**
+ * 
+ * 1. Фільтруємо автомобілі по параметру sale(filter повертає новий масив)
+ * 2. Сортуємо масив який отримали, по зростанню ціні
+ */
+
+// const getSortedCarsOnSale = cars => [...cars].filter(car => car.onSale).sort((a, b) => a.price - b.price)
+  
+// console.table(getSortedCarsOnSale(cars));
