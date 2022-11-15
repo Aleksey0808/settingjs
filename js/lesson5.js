@@ -52,32 +52,59 @@
 // // console.log(myCar2);
 // // console.log(myCar3);
 
-class Storage {
-  constructor(items) {
-    this.items = items;
-  };
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   };
 
-  getItems() {
-  return this.items;
-};
+//   getItems() {
+//   return this.items;
+// };
 
-addItem(newItem) {
-  return this.items.push(newItem);;
-};
+// addItem(newItem) {
+//   return this.items.push(newItem);;
+// };
 
-removeItem(itemToRemove) {
+// removeItem(itemToRemove) {
 
-  this.items = this.items.filter(item => item !== itemToRemove);
-};
+//   this.items = this.items.filter(item => item !== itemToRemove);
+// };
 
 
+// }
+
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+class Car {
+ static MAX_PRICE = 50000;
+  
+  #price;
+
+  constructor({ price }) {
+    this.#price = price;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+   this.#price = newPrice <= Car.MAX_PRICE ? this.#price = newPrice : this.#price;
+  }
+  // Change code above this line
 }
 
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
 
-// Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
