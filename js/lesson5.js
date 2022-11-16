@@ -52,32 +52,57 @@
 // // console.log(myCar2);
 // // console.log(myCar3);
 
-class Storage {
-  constructor(items) {
-    this.items = items;
-  };
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   };
 
-  getItems() {
-  return this.items;
+//   getItems() {
+//   return this.items;
+// };
+
+// addItem(newItem) {
+//   return this.items.push(newItem);;
+// };
+
+// removeItem(itemToRemove) {
+
+//   this.items = this.items.filter(item => item !== itemToRemove);
+// };
+
+
+// }
+
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// this
+//task 1
+
+// Example 1 - Мастерская драгоценностей
+// Напишите метод calcTotalPrice(stoneName), который принимает название камня и рассчитывает и возвращает
+//  общую стоимость камней с таким именем, ценой и количеством из свойства stones.
+
+const chopShop = {
+  stones: [
+    { name: 'Emerald', price: 1300, quantity: 4 },
+    { name: 'Diamond', price: 2700, quantity: 3 },
+    { name: 'Sapphire', price: 1400, quantity: 7 },
+    { name: 'Ruby', price: 800, quantity: 2 },
+  ],
+  calcTotalPrice(stoneName) {
+    const result = stoneName.reduce((total, stone) => total += stone.price);
+    console.log(result);
+  },
 };
 
-addItem(newItem) {
-  return this.items.push(newItem);;
-};
-
-removeItem(itemToRemove) {
-
-  this.items = this.items.filter(item => item !== itemToRemove);
-};
-
-
-}
-
-
-// Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+console.log(chopShop.calcTotalPrice('Emerald')); // 5200
+console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
+console.log(chopShop.calcTotalPrice('Ruby')); // 1600
