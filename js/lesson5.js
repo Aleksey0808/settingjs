@@ -61,6 +61,7 @@
 //   return this.items;
 // };
 
+
 // addItem(newItem) {
 //   return this.items.push(newItem);;
 // };
@@ -106,3 +107,51 @@ console.log(chopShop.calcTotalPrice('Emerald')); // 5200
 console.log(chopShop.calcTotalPrice('Diamond')); // 8100
 console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
 console.log(chopShop.calcTotalPrice('Ruby')); // 1600
+
+// addItem(newItem) {
+//   return this.items.push(newItem);;
+// };
+
+// removeItem(itemToRemove) {
+
+//   this.items = this.items.filter(item => item !== itemToRemove);
+// };
+
+
+// }
+
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+class Car {
+ static MAX_PRICE = 50000;
+  
+  #price;
+
+  constructor({ price }) {
+    this.#price = price;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+   this.#price = newPrice <= Car.MAX_PRICE ? this.#price = newPrice : this.#price;
+  }
+  // Change code above this line
+}
+
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
