@@ -149,10 +149,10 @@
 //     const newContact = {
 //       list: 'default',
 //       ...contact,
-//       id: generateId(),
-//       createdAt: getDate(),
+//       id: this.generateId(),
+//       createdAt: this.getDate(),
 //     };
-//     contacts.push(newContact);
+//     this.contacts.push(newContact);
 //   },
 //   generateId() {
 //     return '_' + Math.random().toString(36).substr(2, 9);
@@ -162,19 +162,20 @@
 //   },
 // };
 
-// console.log(
-//   phonebook.add({
-//     name: 'Mango',
-//     email: 'mango@mail.com',
-//     list: 'friends',
-//   }),
-// );
-// console.log(
-//   phonebook.add({
-//     name: 'Poly',
-//     email: 'poly@hotmail.com',
-//   }),
-// );
+
+  // phonebook.add({
+  //   name: 'Mango',
+  //   email: 'mango@mail.com',
+  //   list: 'friends',
+  // })
+
+  // phonebook.add({
+  //   name: 'Poly',
+  //   email: 'poly@hotmail.com',
+  // })
+
+
+// console.log(phonebook);
 
 // Example 3 - Калькулятор
 // Создайте объект calculator с тремя методами:
@@ -184,9 +185,11 @@
 // mult() - перемножает сохранённые значения и возвращает результат.
 
 // const calculator = {
+//   a: 0,
+//   b: 0,
 //   read(a, b) {
-//     this.a = prompt('number "a"', 0);
-//     this.b = prompt('number "b"', 0);
+//     this.a = a ?? 0;
+//     this.b = b ?? 0;
 //   },
 
 //   add() {
@@ -198,7 +201,7 @@
 //   },
 // };
 
-// console.log(calculator.read());
+// console.log(calculator.read(2, 4));
 // console.log(calculator.add());
 // console.log(calculator.mult());
 
@@ -254,6 +257,7 @@
 // console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 17 posts
 // poly.updatePostCount(4);
 // console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 21 posts
+
 
 // Example 2 - Хранилище
 // Напиши класс Storage который создаёт объекты для управления складом товаров. При вызове будет получать
@@ -387,26 +391,25 @@
 // и объявляет одно свойство on - состояние вкл/выкл (true/false). 
 // По умолчанию значение свойства on должно быть false.
 
-class Toggle {
-    constructor({isOpen: boolean} = {}, on = false) {
-        this.on = on;
-    }
-}
+// class Toggle {
+//     constructor({isOpen: boolean} = {}, on = false) {
+//         this.on = on;
+//     }
+// }
 
-const firstToggle = new Toggle({ isOpen: true });
+// const firstToggle = new Toggle({ isOpen: true });
 
-console.group('firstToggle');
-console.log(firstToggle.on);
-firstToggle.toggle();
-console.log(firstToggle.on);
-console.groupEnd('firstToggle');
+// console.group('firstToggle');
+// console.log(firstToggle.on);
+// firstToggle.toggle();
+// console.log(firstToggle.on);
+// console.groupEnd('firstToggle');
 
-const secondToggle = new Toggle();
+// const secondToggle = new Toggle();
 
-console.group('secondToggle');
-console.log(secondToggle.on);
-secondToggle.toggle();
-console.log(secondToggle.on);
-console.groupEnd('secondToggle');
-
+// console.group('secondToggle');
+// console.log(secondToggle.on);
+// secondToggle.toggle();
+// console.log(secondToggle.on);
+// console.groupEnd('secondToggle');
 
