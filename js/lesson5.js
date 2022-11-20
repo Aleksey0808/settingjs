@@ -205,6 +205,50 @@
 // console.log(calculator.add());
 // console.log(calculator.mult());
 
+// const user = {
+//     name: 'Artem',
+//     city: 'Lviv',
+//     sayHello(year, language) {
+//         // console.log(arguments);
+//         console.log(`Hello my name ${this.name}, from ${this.city}, I'm ${year}, study ${language}`);
+//     }
+// }
+// user.sayHello(28, "HTML")
+
+
+
+// const den = {
+//     name:'Den',
+//     city: "Zhutomyr"
+// }
+
+// const kate = {
+//     name: "Kate",
+//     city: "Uzhgorod"
+// }
+
+
+// const alex = {
+//     name: "ALex",
+//     city: "Kyiv"
+// }
+
+
+
+
+// const args = [18, "CSS"]
+// user.sayHello.call(den,22,"JS")
+// user.sayHello.apply(kate,[18, "CSS"])
+// user.sayHello.apply(kate,args)
+// console.log(user.sayHello.bind(alex));
+// const alexSay = user.sayHello.bind(alex)
+// alexSay(33, "react.js")
+// alexSay(34, 'Node.js')
+// alexSay(11, 'Java')
+// user.sayHello(28, "HTML")
+// alexSay()
+// console.log(alexSay);
+
 // Модуль 5. Занятие 10. Прототипы и классы////////////////////////
 
 // Example 1 - Блоггер
@@ -302,7 +346,7 @@
 // console.table(storage.items); // [ '🍎', '🍇', '🍑', '🍌' ]
 
 // Example 3 - User
-// Напиши класс User который создаёт объект со свойствами login и email. 
+// Напиши класс User который создаёт объект со свойствами login и email.
 // Объяви приватные свойства #login и #email, доступ к которым сделай через геттер и сеттер login и email.
 
 // class User {
@@ -351,7 +395,7 @@
 // console.log(poly.login); // Polycutie
 
 // Example 4 - Заметки
-// Напиши класс Notes который управляет коллекцией заметок в свойстве items. 
+// Напиши класс Notes который управляет коллекцией заметок в свойстве items.
 // Заметка это объект со свойствами text и priority. Добавь классу статическое свойство Priority,
 //  в котором будет храниться объект с приоритетами.
 
@@ -362,44 +406,65 @@
 // }
 // Добавь методы addNote(note), removeNote(text) и updatePriority(text, newPriority).
 
-// class Notes {
-//     static Priority
-//     constructor(items) {
-//         items = items;
-//     }
-// }
+// class Notes{
+//     static Priority = {
+//           LOW: 'low',
+//           NORMAL: 'normal',
+//           HIGH: 'high'
+//         }
+//     constructor(items){
+//         this.items = items;
 
+//     }
+//       addNote(note){
+//         this.items.push(note)
+//       }
+            
+//       removeNote(text) {
+        
+//         const element = this.items.find(value => value.text === text);
+    
+//         if (this.items.includes(element)) {
+//           const index = this.items.indexOf(element);
+//           this.items.splice(index, 1);
+//             }
+//   }
+  
+//       updatePriority(text, newPriority) {
+//       return this.items.map(value => value.text === text ? value.priority = newPriority : value);
+        
+//         }
+// }
 // const myNotes = new Notes([]);
 
-// myNotes.addNote({ text: 'Моя первая заметка', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'Моя перша замітка', priority: Notes.Priority.LOW });
 // console.log(myNotes.items);
 
-// myNotes.addNote({
-//   text: 'Моя вторая заметка',
-//   priority: Notes.Priority.NORMAL,
-// });
+// myNotes.addNote({ text: 'Моя друга замітка', priority: Notes.Priority.NORMAL, });
 // console.log(myNotes.items);
 
-// myNotes.removeNote('Моя первая заметка');
+// myNotes.addNote({ text: 'Моя третя замітка', priority: Notes.Priority.HIGH, });
 // console.log(myNotes.items);
 
-// myNotes.updateNote('Моя вторая заметка', Notes.Priority.HIGH);
+// myNotes.removeNote('Моя перша замітка');
+// console.log(myNotes.items);
+
+// myNotes.updatePriority('Моя друга замітка', Notes.Priority.HIGH);
 // console.log(myNotes.items);
 
 // Example 5 - Toggle
-// Напишите класс Toggle который принимает объект настроек {isOpen: boolean} 
-// и объявляет одно свойство on - состояние вкл/выкл (true/false). 
+// Напишите класс Toggle который принимает объект настроек {isOpen: boolean}
+// и объявляет одно свойство on - состояние вкл/выкл (true/false).
 // По умолчанию значение свойства on должно быть false.
 
 // class Toggle {
-//     constructor({isOpen: boolean} = {}, on = false) {
+//     constructor( on = {isOpen: false} ) {
 //         this.on = on;
 //     }
 // }
 
 // const firstToggle = new Toggle({ isOpen: true });
 
-// console.group('firstToggle');
 // console.log(firstToggle.on);
 // firstToggle.toggle();
 // console.log(firstToggle.on);
@@ -412,4 +477,263 @@
 // secondToggle.toggle();
 // console.log(secondToggle.on);
 // console.groupEnd('secondToggle');
+
+
+// __________________________________________ //
+// -----------------------------------------TASK 1------------------------------------------//
+// 1 Створити метод об'єкту який буде приймати 1 параметр назву факультету та повертати списoк імен учнів факультету
+// 2 Створити метод об'єкту який буде приймати 1 параметр назву факультету та повертати кількість очків факультета
+// 3 Створити метод об'єкту який буде виводити ім'я факультету в якого більше очків
+
+// const hogvarts = {
+//     griffindor: [{
+//             name: "Harry",
+//             points: 17
+//         },
+//         {
+//             name: "Hermiona",
+//             points: 19
+//         },
+//         {
+//             name: "Ron",
+//             points: 14
+//         },
+//     ],
+//     sliserin: [{
+//             name: "Draco",
+//             points: 17
+//         },
+//         {
+//             name: "Goyl",
+//             points: 14
+//         },
+//         {
+//             name: "Crabbe",
+//             points: 5
+//         },
+//   ],
+  //   universityFaculty(faculty) {
+  //  return this.sliserin.map(hogvart => hogvart.name)
+  // },
+  // universityPoints(points) {
+  //     return this.sliserin.reduce((total, point) => total += point.points, 0)
+  //   },
+//   universityFirstPoints(faculty1, faculty2) {
+//     const facult1 = this.griffindor.reduce((total, point) => total += point.points, 0)
+//     const facult2 = this.sliserin.reduce((total, point) => total += point.points, 0)
+//     return facult1 > facult2 ? facult1 : facult2
+//     },
+// }
+
+// console.log(hogvarts.universityFaculty(hogvarts.sliserin));
+// console.log(hogvarts.universityPoints(hogvarts.sliserin)); 
+// console.log(hogvarts.universityFirstPoints(hogvarts.griffindor, hogvarts.sliserin)); 
+
+
+// -----------------------------------------TASK 2------------------------------------------//
+// Створити функцію яка буде приймати 2 параметра.
+// 1 Масив студентів.
+// 2 Мову програмування яку потрібно знайти.
+// Функція повертає масив імен користувачів які вивчають цю мову.
+
+// const students = [{
+//     name: `Lika`,
+//     language: `html`
+
+// }, {
+//     name: `Anton`,
+//     language: `css`
+
+// }, {
+//     name: `Andriy`,
+//     language: `js`
+
+// }, {
+//     name: `Vova`,
+//     language: `html`
+
+// }, {
+//     name: `Alina`,
+//     language: `css`
+
+// }, {
+//     name: `Egor`,
+//     language: `js`
+
+// }, {
+//     name: `Aleksandr`,
+//     langunage: `html`
+
+// }, {
+//     name: `Taras`,
+//     language: `css`
+
+// }, {
+//     name: `Ivan`,
+//     language: `js`
+
+// }, {
+//     name: `Make`,
+//     language: `html`
+
+// }, ];
+
+
+// const programming = function(student, lang) {
+//   return student.filter(student => student.language === lang).map(name => name.name)
+// };
+
+// console.log(programming(students, `js`));
+
+
+
+// -----------------------------------------TASK 3------------------------------------------//
+// // Порахувати скільки ззаробив кожен  юзер
+// // (функція приймає 2 параметри
+// // 1 параметр масив
+// // 2 параметр імя робітника
+// // Функція повертає скільки він заробив (salary*month) )
+
+// // Порахувати загальну суму заробітку всіх робітників()
+// // (функція приймає 1 параметр масив, і повертає загальну суму заробітку всіх робітників);
+
+// // const workers = [{
+// //         name: 'Alex',
+// //         salary: 3500,
+// //         month: 12,
+// //     },
+// //     {
+// //         name: 'Dima',
+// //         salary: 2500,
+// //         month: 9,
+// //     },
+// //     {
+// //         name: 'Oleg',
+// //         salary: 1500,
+// //         month: 36,
+// //     },
+// // ];
+
+
+
+// -----------------------------------------TASK 4------------------------------------------//
+// 1 Створити функцію яка буде приймати 2 параметри
+//    1 параметр масив
+//    2 параметр назва книги
+// Функція повертає Імена юзерів (формат стрінги) в яких є ця книга ("Harry Potter") \\\ "Anna, Oleksii"
+
+// 2 Порахувати вік всіх юзерів у яких є ключ age.
+
+// const friends = [{ name: "Anna", books: ["Bible", "Harry Potter"], age: 21 },
+//     { name: "Bob", books: ["War and peace", "Romeo and Juliet"], age: 26 },
+//     { name: "Alice", books: ["War and peace", "Romeo and Juliet"]},
+//     { name: "Oleksii", books: ["Bible","War and peace","Harry Potter",  "Romeo and Juliet"], age: 26},
+// ]
+
+
+
+// -----------------------------------------TASK 5------------------------------------------//
+// Потрібно створити 4 методи об'єкту
+// 1 виводить суму на карті (назву вводимо в prompt())
+// 2 додає нову карту (назву вводимо в prompt())
+// 3 зняти з карти (назву вводимо в prompt() та суму в prompt())
+// 4 додати на карту (назву вводимо в prompt() та суму в prompt())
+
+// const bankSystem = {
+//     privat : 1000,
+//     mono : 1500,
+
+// }
+
+
+
+// -----------------------------------------TASK 6------------------------------------------//
+// Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
+
+// const people1 = [{
+//         name: 'Alex',
+//         know: ['Eva', 'Jhon'],
+//     },
+//     {
+//         name: 'Ivan',
+//         know: ['Jhon', 'Alex']
+//     },
+//     {
+//         name: 'Eva',
+//         know: ['Alex','Jhon']
+//     },
+//     {
+//         name: 'Jhon',
+//         know: [Alex]
+//     },
+// ] //Not found
+
+// const people2 = [{
+//         name: 'Alex',
+//         know: ['Eva', 'Jhon'],
+//     },
+//     {
+//         name: 'Jhon',
+//         know: []
+//     },
+//     {
+//         name: 'Eva',
+//         know: []
+//     },
+//     {
+//         name: 'Ivan',
+//         know: ['Jhon', 'Alex']
+//     },
+// ];// Not found
+
+
+// const people3 = [{
+//         name: 'Alex',
+//         know: ['Eva', 'Jhon'],
+//     },
+//     {
+//         name: 'Jhon',
+//         know: []
+//     },
+//     {
+//         name: 'Eva',
+//         know: ['Alex', 'Jhon']
+//     },
+//     {
+//         name: 'Ivan',
+//         know: ['Jhon', 'Alex']
+//     },
+// ]; // Jhon
+
+
+// -----------------------------------------TASK 7------------------------------------------//
+// Створити функцію яка приймає 1 параметр масив продуктів і повертає мутований масив
+// Потрібно перебрати масив і якщо він має об'єкти в яких дублюються айді то квонтіті цих елементів потрібно сплюсувати
+// а ті обє'кти в яких айді співпав видалити з масиву.
+// (Потрібно мутувати масив, створювати новий не потрібно)
+
+// const products = [{
+//     id: 'sku1',
+//     qty: 1,
+// }, {
+//     id: 'sku2',
+//     qty: 2,
+// }, {
+//     id: 'sku3',
+//     qty: 3,
+// }, {
+//     id: 'sku1',
+//     qty: 6,
+// }, {
+//     id: 'sku1',
+//     qty: 8,
+// }, {
+//     id: 'sku2',
+//     qty: 19,
+// }, {
+//     id: 'sku4',
+//     qty: 1,
+// }]
+
+
 
