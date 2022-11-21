@@ -457,20 +457,23 @@
 // и объявляет одно свойство on - состояние вкл/выкл (true/false).
 // По умолчанию значение свойства on должно быть false.
 
+
 // class Toggle {
 //     constructor( on = {isOpen: false} ) {
 //         this.on = on;
 //     }
 // }
 
-// const firstToggle = new Toggle({ isOpen: true });
 
 // console.log(firstToggle.on);
+
 // firstToggle.toggle();
 // console.log(firstToggle.on);
-// console.groupEnd('firstToggle');
+// console.log('firstToggle');
 
-// const secondToggle = new Toggle();
+// const secondToggle = new Toggle({ 
+//   isOpen: false 
+// });
 
 // console.group('secondToggle');
 // console.log(secondToggle.on);
