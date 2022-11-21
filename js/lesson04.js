@@ -729,7 +729,8 @@ const cars = [
 
 //task 2
 
-// Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним значенням властивості price залежно від переданої знижки.
+// Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним значенням властивості 
+// price залежно від переданої знижки.
 
 // const makeCarsWithDiscount = (cars, discount) => cars.map(car => ({
 //   ...car,
@@ -767,9 +768,9 @@ const cars = [
  * збігається зі значенням параметра `type`.
 */
 
-// const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
+const getCarsWithType = (cars, type) => cars.filter(car => car.type === type);
 
-// console.table(getCarsWithType(cars, 'sedan'));
+console.table(getCarsWithType(cars, 'sedan'));
 
 /**
  * Task 6.

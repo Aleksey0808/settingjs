@@ -591,7 +591,7 @@
 
 
 // -----------------------------------------TASK 3------------------------------------------//
-// // Порахувати скільки ззаробив кожен  юзер
+// // Порахувати скільки заробив кожен  юзер
 // // (функція приймає 2 параметри
 // // 1 параметр масив
 // // 2 параметр імя робітника
@@ -600,22 +600,39 @@
 // // Порахувати загальну суму заробітку всіх робітників()
 // // (функція приймає 1 параметр масив, і повертає загальну суму заробітку всіх робітників);
 
-// // const workers = [{
-// //         name: 'Alex',
-// //         salary: 3500,
-// //         month: 12,
-// //     },
-// //     {
-// //         name: 'Dima',
-// //         salary: 2500,
-// //         month: 9,
-// //     },
-// //     {
-// //         name: 'Oleg',
-// //         salary: 1500,
-// //         month: 36,
-// //     },
-// // ];
+// const workers = [{
+//         name: 'Alex',
+//         salary: 3500,
+//         month: 12,
+//     },
+//     {
+//         name: 'Dima',
+//         salary: 2500,
+//         month: 9,
+//     },
+//     {
+//         name: 'Oleg',
+//         salary: 1500,
+//         month: 36,
+//     },
+// ];
+
+// const totalSalary = function(array, name) {
+  // return array.filter(person => person.name === name).map(sal => sal.salary * sal.month)
+  
+// }
+
+// console.log(totalSalary(workers, 'Alex'))
+// console.log(totalSalary(workers, 'Dima'))
+// console.log(totalSalary(workers, 'Oleg'))
+
+// const totalSalary = function(array) {
+  
+//   return array.reduce((total, sal) => total += sal.salary * sal.month, 0)
+// }
+
+// console.log(totalSalary(workers))
+
 
 
 
@@ -633,6 +650,18 @@
 //     { name: "Oleksii", books: ["Bible","War and peace","Harry Potter",  "Romeo and Juliet"], age: 26},
 // ]
 
+// const userName = function(array, nameBook) {
+//  return array.filter(book => book.books.includes(nameBook)).map(user => user.name)
+// }
+
+// console.log(userName(friends, "Harry Potter"))
+
+// const userName = function(array) {
+//   return array.filter((user) => user.age).reduce((total, user) => total += user.age, 0)
+//  }
+
+// console.log(userName(friends))
+
 
 
 // -----------------------------------------TASK 5------------------------------------------//
@@ -642,11 +671,17 @@
 // 3 зняти з карти (назву вводимо в prompt() та суму в prompt())
 // 4 додати на карту (назву вводимо в prompt() та суму в prompt())
 
-// const bankSystem = {
-//     privat : 1000,
-//     mono : 1500,
+const bankSystem = {
+    privat : 1000,
+    mono : 1500,
 
-// }
+    upAmount(bank){
+     this.bank
+    },
+
+}
+
+bankSystem.upAmount('mono')
 
 
 
@@ -711,7 +746,8 @@
 
 // -----------------------------------------TASK 7------------------------------------------//
 // Створити функцію яка приймає 1 параметр масив продуктів і повертає мутований масив
-// Потрібно перебрати масив і якщо він має об'єкти в яких дублюються айді то квонтіті цих елементів потрібно сплюсувати
+// Потрібно перебрати масив і якщо він має об'єкти в яких дублюються айді то квонтіті цих елементів 
+// потрібно сплюсувати 
 // а ті обє'кти в яких айді співпав видалити з масиву.
 // (Потрібно мутувати масив, створювати новий не потрібно)
 
