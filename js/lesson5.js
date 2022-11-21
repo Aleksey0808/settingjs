@@ -464,22 +464,18 @@
 //     }
 // }
 
-
+// const firstToggle = new Toggle({ 
+//   isOpen: true 
+// });
 // console.log(firstToggle.on);
-
-// firstToggle.toggle();
-// console.log(firstToggle.on);
-// console.log('firstToggle');
 
 // const secondToggle = new Toggle({ 
 //   isOpen: false 
 // });
 
-// console.group('secondToggle');
 // console.log(secondToggle.on);
-// secondToggle.toggle();
-// console.log(secondToggle.on);
-// console.groupEnd('secondToggle');
+
+
 
 
 // __________________________________________ //
@@ -671,17 +667,39 @@
 // 3 зняти з карти (назву вводимо в prompt() та суму в prompt())
 // 4 додати на карту (назву вводимо в prompt() та суму в prompt())
 
-const bankSystem = {
-    privat : 1000,
-    mono : 1500,
+// const bankSystem = {
+//   privat: 1000,
+//   mono: 1500,
 
-    upAmount(bank){
-     this.bank
-    },
+//   upAmount(nameBook) {
+//     alert( "Ключ: " + nameBook + " значение: " + bankSystem[nameBook] );
+//   },
 
-}
+//   addCard(card) {
+ 
+//   },
 
-bankSystem.upAmount('mono')
+// };
+// console.log(bankSystem.upAmount(prompt("Введите значение")));
+// console.log(bankSystem.addCard(prompt("Введите значение")));
+
+// const bankSystem = {
+//   privat: 1000,
+//   mono: 1500,
+
+//   upAmount(nameBook) {
+   
+//   },
+
+//   addCard(card) {
+ 
+//   },
+
+// };
+// console.log(bankSystem.upAmount());
+// console.log(bankSystem.addCard());
+
+
 
 
 
@@ -751,28 +769,41 @@ bankSystem.upAmount('mono')
 // а ті обє'кти в яких айді співпав видалити з масиву.
 // (Потрібно мутувати масив, створювати новий не потрібно)
 
-// const products = [{
-//     id: 'sku1',
-//     qty: 1,
-// }, {
-//     id: 'sku2',
-//     qty: 2,
-// }, {
-//     id: 'sku3',
-//     qty: 3,
-// }, {
-//     id: 'sku1',
-//     qty: 6,
-// }, {
-//     id: 'sku1',
-//     qty: 8,
-// }, {
-//     id: 'sku2',
-//     qty: 19,
-// }, {
-//     id: 'sku4',
-//     qty: 1,
-// }]
+const products = [{
+    id: 'sku1',
+    qty: 1,
+}, {
+    id: 'sku2',
+    qty: 2,
+}, {
+    id: 'sku3',
+    qty: 3,
+}, {
+    id: 'sku1',
+    qty: 6,
+}, {
+    id: 'sku1',
+    qty: 8,
+}, {
+    id: 'sku2',
+    qty: 19,
+}, {
+    id: 'sku4',
+    qty: 1,
+  }]
+
+const newFoo = function (array) {
+const table = {};
+const res = array.filter(({id}) =>(!table[id] && (table[id] = 1)));
+return res
+  
+}
+console.log(newFoo(products));
+
+// https://ru.stackoverflow.com/questions/1389033/%D0%9D%D0%B0%D0%B9%D1%82%D0%B8-%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2
+// https://qna.habr.com/q/884939
+
+
 
 
 
