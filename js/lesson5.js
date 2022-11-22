@@ -670,38 +670,35 @@
 // const bankSystem = {
 //   privat: 1000,
 //   mono: 1500,
-
-//   upAmount(nameBook) {
-//     alert( "Ключ: " + nameBook + " значение: " + bankSystem[nameBook] );
+//   balance() {
+//     const bank = prompt(`введіть назву банку`);
+//     if (bankSystem.hasOwnProperty(bank)) {
+//       alert(bankSystem[bank]);
+//     } else {
+//       alert(`В тебе відсутній рахунок в такому банку, чувак`);
+//     }
 //   },
-
-//   addCard(card) {
- 
+//   addNewCount() {
+//     const bank = prompt(`введіть назву банку`);
+//     const sum = prompt(`введіть залишок даного рахунку (лише цифри)`);
+//     bankSystem[bank] = Number(sum);
 //   },
-
+//   withdrawal() {
+//     const bank = prompt(`введіть назву банку`);
+//     const sum = prompt(`введіть cуму, котру зняли (лише цифри)`);
+//     if (bankSystem.hasOwnProperty(bank)) {
+//       bankSystem[bank] = bankSystem[bank] - Number(sum);
+//       alert(`${bank} ${bankSystem[bank]}`);
+//       console.log(bankSystem[bank]);
+//     } else {
+//       alert(`В тебе відсутній рахунок в такому банку, чувак`);
+//     }
+//   },
 // };
-// console.log(bankSystem.upAmount(prompt("Введите значение")));
-// console.log(bankSystem.addCard(prompt("Введите значение")));
-
-// const bankSystem = {
-//   privat: 1000,
-//   mono: 1500,
-
-//   upAmount(nameBook) {
-   
-//   },
-
-//   addCard(card) {
- 
-//   },
-
-// };
-// console.log(bankSystem.upAmount());
-// console.log(bankSystem.addCard());
-
-
-
-
+// bankSystem.withdrawal();
+// bankSystem.balance();
+// bankSystem.addNewCount();
+// console.table(bankSystem);
 
 // -----------------------------------------TASK 6------------------------------------------//
 // Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
@@ -793,15 +790,15 @@ const products = [{
   }]
 
 const newFoo = function (array) {
-const table = {};
-const res = array.filter(({id}) =>(!table[id] && (table[id] = 1)));
-return res
-  
+// const table = {};
+// const res = array.filter(({id}) =>(!table[id] && (table[id] = 1)));
+// return res
+  array.reduce((acc, item, idx, arr) => {
+    
+  }, {})
 }
 console.log(newFoo(products));
 
-// https://ru.stackoverflow.com/questions/1389033/%D0%9D%D0%B0%D0%B9%D1%82%D0%B8-%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2
-// https://qna.habr.com/q/884939
 
 
 
