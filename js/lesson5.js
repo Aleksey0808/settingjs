@@ -767,37 +767,74 @@
 // (Потрібно мутувати масив, створювати новий не потрібно)
 
 const products = [{
-    id: 'sku1',
-    qty: 1,
+  id: 'sku1',
+  qty: 1,
 }, {
-    id: 'sku2',
-    qty: 2,
+  id: 'sku2',
+  qty: 2,
 }, {
-    id: 'sku3',
-    qty: 3,
+  id: 'sku3',
+  qty: 3,
 }, {
-    id: 'sku1',
-    qty: 6,
+  id: 'sku1',
+  qty: 6,
 }, {
-    id: 'sku1',
-    qty: 8,
+  id: 'sku1',
+  qty: 8,
 }, {
-    id: 'sku2',
-    qty: 19,
+  id: 'sku2',
+  qty: 19,
 }, {
-    id: 'sku4',
-    qty: 1,
-  }]
+  id: 'sku4',
+  qty: 1,
+  }];
+
+  console.log(products.reduce((s, i) => s = s + i.qty, 0));
+
+  let duplicateIds = [];
+
+let new_data = products.map((e,i,a) => {  
+  if (a.filter((item, ind) => i !== ind).some(item => item.id === e.id)) {
+    e.qty += e.qty;
+    return e;
+  } else {
+    duplicateIds.push(e);
+    return e;
+  } 
+});
+
+// console.log(new_data);
+// console.log(duplicateIds);
+
+// const res = products.reduce((o, i) => {
+//   if (!o.find(v => v.id === i.id)) {
+//     i.qty += 100
+//     o.push(i);
+//   }
+//   return o;
+// }, []);
+// console.log(res)
+
 
 const newFoo = function (array) {
-// const table = {};
-// const res = array.filter(({id}) =>(!table[id] && (table[id] = 1)));
-// return res
-  array.reduce((acc, item, idx, arr) => {
-    
-  }, {})
-}
-console.log(newFoo(products));
+  // const table = {};
+  // const res = array.filter(({id, qty}) =>(!table[id] && (table[id] = 1)));
+  // return res
+  // return array.reduce((acc, {id, qty}) => (!acc[id] && (acc[id] = 1)), {} )
+};
+
+// console.log(newFoo(products));
+
+
+const res = products.reduce((o, i) => {
+  if (!o.find(v => v.id === i.id)) {
+    // o += i.qty
+    o.push(i);
+  }
+  return o;
+}, []);
+console.log(res)
+
 
 
 
