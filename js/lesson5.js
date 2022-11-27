@@ -835,6 +835,34 @@ const res = products.reduce((o, i) => {
 }, []);
 console.log(res)
 
+// const imgRev = images.map(item => {
+//   const liEl = document.createElement('li');
+//   const imageEl = document.createElement('img');
+//   imageEl.src = item.url;
+//   imageEl.alt = item.alt;
+//   liEl.append(imageEl);
+//   return liEl;
+// })
+
+
+// imgEl.append(...imgRev);
+
+// console.log(imgEl)
+
+// function fprod(arrProds) {
+//   arrProds.forEach(product => {
+//     arrProds.reduce((acc, item) => {
+//       if (acc.id === item.id && acc != item && acc.qty != 0) {
+//         acc.qty += item.qty;
+//         item.qty = 0;
+//       }
+//       return acc;
+//     }, product);
+//   });
+//   return arrProds.filter(item => item.qty != 0);
+// }
+
+
 
 
 
