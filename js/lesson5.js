@@ -683,6 +683,28 @@
 //     const sum = prompt(`введіть залишок даного рахунку (лише цифри)`);
 //     bankSystem[bank] = Number(sum);
 //   },
+
+// };
+// console.log(bankSystem.upAmount(prompt("Введите значение")));
+// console.log(bankSystem.addCard(prompt("Введите значение")));
+
+// const bankSystem = {
+//   privat: 1000,
+//   mono: 1500,
+//   balance() {
+//     const bank = prompt(`введіть назву банку`);
+//     if (bankSystem.hasOwnProperty(bank)) {
+//       alert(bankSystem[bank]);
+//     } else {
+//       alert(`В тебе відсутній рахунок в такому банку, чувак`);
+//     }
+//   },
+//   addNewCount() {
+//     const bank = prompt(`введіть назву банку`);
+//     const sum = prompt(`введіть залишок даного рахунку (лише цифри)`);
+//     bankSystem[bank] = Number(sum);
+//   },
+
 //   withdrawal() {
 //     const bank = prompt(`введіть назву банку`);
 //     const sum = prompt(`введіть cуму, котру зняли (лише цифри)`);
@@ -699,6 +721,7 @@
 // bankSystem.balance();
 // bankSystem.addNewCount();
 // console.table(bankSystem);
+
 
 // -----------------------------------------TASK 6------------------------------------------//
 // Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
@@ -817,6 +840,7 @@ let new_data = products.map((e,i,a) => {
 
 
 const newFoo = function (array) {
+
   // const table = {};
   // const res = array.filter(({id, qty}) =>(!table[id] && (table[id] = 1)));
   // return res
@@ -861,11 +885,6 @@ console.log(res)
 //   });
 //   return arrProds.filter(item => item.qty != 0);
 // }
-
-
-
-
-
 
 
 
