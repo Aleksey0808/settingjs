@@ -812,67 +812,22 @@ const products = [{
   qty: 1,
   }];
 
-  console.log(products.reduce((s, i) => s = s + i.qty, 0));
+// variant 1
+  // function foo(arr) {
+  //   for(let i = 0; i < arr.length; i += 1) {
+  //     for(let j = i + 1; j < arr.length; j += 1) {
+  //       if(arr[i].id === arr[j].id) {
+  //         arr[i].qty += arr[j].qty;
+  //         arr.splice(j, 1);
+  //         j -= 1;
+  //       }
+  //     }
+  //   }
+  // }
+  // foo(products);
+  // console.log(products)
 
-  let duplicateIds = [];
-
-let new_data = products.map((e,i,a) => {  
-  if (a.filter((item, ind) => i !== ind).some(item => item.id === e.id)) {
-    e.qty += e.qty;
-    return e;
-  } else {
-    duplicateIds.push(e);
-    return e;
-  } 
-});
-
-// console.log(new_data);
-// console.log(duplicateIds);
-
-// const res = products.reduce((o, i) => {
-//   if (!o.find(v => v.id === i.id)) {
-//     i.qty += 100
-//     o.push(i);
-//   }
-//   return o;
-// }, []);
-// console.log(res)
-
-
-const newFoo = function (array) {
-
-  // const table = {};
-  // const res = array.filter(({id, qty}) =>(!table[id] && (table[id] = 1)));
-  // return res
-  // return array.reduce((acc, {id, qty}) => (!acc[id] && (acc[id] = 1)), {} )
-};
-
-// console.log(newFoo(products));
-
-
-const res = products.reduce((o, i) => {
-  if (!o.find(v => v.id === i.id)) {
-    // o += i.qty
-    o.push(i);
-  }
-  return o;
-}, []);
-console.log(res)
-
-// const imgRev = images.map(item => {
-//   const liEl = document.createElement('li');
-//   const imageEl = document.createElement('img');
-//   imageEl.src = item.url;
-//   imageEl.alt = item.alt;
-//   liEl.append(imageEl);
-//   return liEl;
-// })
-
-
-// imgEl.append(...imgRev);
-
-// console.log(imgEl)
-
+// variant 2
 // function fprod(arrProds) {
 //   arrProds.forEach(product => {
 //     arrProds.reduce((acc, item) => {
@@ -886,5 +841,4 @@ console.log(res)
 //   return arrProds.filter(item => item.qty != 0);
 // }
 
-
-
+// console.log(fprod(products))
